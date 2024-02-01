@@ -1,0 +1,729 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Venxine">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="研究一台路由器，需要先了解什么知识？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notes｜网络设备相关术语的学习">
+<meta property="og:url" content="http://example.com/2020/07/16/20200716%20-%20Notes%EF%BD%9C%E7%BD%91%E7%BB%9C%E8%AE%BE%E5%A4%87%E7%9B%B8%E5%85%B3%E6%9C%AF%E8%AF%AD%E7%9A%84%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Venxine.Art">
+<meta property="og:description" content="研究一台路由器，需要先了解什么知识？">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://venxineoss.oss-cn-shanghai.aliyuncs.com/blog/202112061030019.jpg">
+<meta property="article:published_time" content="2020-07-16T07:00:00.000Z">
+<meta property="article:modified_time" content="2021-12-31T05:51:28.497Z">
+<meta property="article:author" content="Venxine">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="路由器">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://venxineoss.oss-cn-shanghai.aliyuncs.com/blog/202112061030019.jpg">
+  
+  
+  
+  <title>Notes｜网络设备相关术语的学习 - Venxine.Art</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Venxine.Art</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/" target="_self">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Notes｜网络设备相关术语的学习"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2020-07-16 15:00" pubdate>
+          2020年7月16日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">Notes｜网络设备相关术语的学习</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <div class="note note-secondary">
+            <p>原文于 <em>2020-07-16 15:00</em> 发布于我的公众号 <strong>OverwinStudio</strong> ：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/B18jL3KQgn1mEAAXs2O38w" title="Notes｜网络设备相关术语的学习"><em>Notes｜网络设备相关术语的学习</em></a> 。</p>
+          </div>
+
+<hr>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>去年双十一买了台路由器，Netgear（网件）的Nighthawk（夜鹰）系列的X6S - R8000P，这是一台WiFi 5的路由器，是网件在WiFi 5时代的次旗舰路由。其实去年下半年WiFi 6的路由器已经开始铺开了，去年新出的各式手机电脑也开始支持WiFi 6。买WiFi 5的路由器其实并不是正确的选择，但是我没有用过这么高端的路由器，想试试到底为什么好。买这个路由器相当于是买的WiFi 5高端路由器的最后一批库存，而且买的是“变形金刚版”，也就是保修只有一年的版本，网上很多说法说是官方翻新机。不过确实是低价了，￥799一台，买了两台，后来咸鱼出了一台。</p>
+<p>一直拖延着，拖了九个多月，上周末刚拿出来用。面对包装盒上标的琳琅满目的各类新技术都只知道看起来很厉害，但是也不知道为什么厉害，新技术的原理是什么，它为什么比别的路由器高端。主观上用起来确实是能感受到比四年前买的路由器要稳，延迟要低，但是它的设置也确实是复杂，面对设置里面的各种术语、词汇也不知道真正的意思。那只有从无线设备的基础知识开始慢慢学起。</p>
+<p><img src="https://venxineoss.oss-cn-shanghai.aliyuncs.com/blog/202112061028280.jpg" srcset="/img/loading.gif" lazyload alt="硕大的R8000P。"></p>
+<h3 id="MIMO"><a href="#MIMO" class="headerlink" title="MIMO"></a><strong>MIMO</strong></h3><h4 id="Multi-Input-Multi-Output（又称SU-MIMO-Single-User-Multi-Input-Multi-Output）：（单用户）多输入多输出系统。"><a href="#Multi-Input-Multi-Output（又称SU-MIMO-Single-User-Multi-Input-Multi-Output）：（单用户）多输入多输出系统。" class="headerlink" title="Multi-Input Multi-Output（又称SU-MIMO: Single-User Multi-Input Multi-Output）：（单用户）多输入多输出系统。"></a><strong>Multi-Input Multi-Output</strong>（又称SU-MIMO: Single-User Multi-Input Multi-Output）：（单用户）<strong>多输入多输出系统</strong>。</h4><p><strong>原理：</strong>在<strong>发送端</strong>和<strong>接收端</strong>都<strong>使用了多根天线</strong>，在收发之间构成了多个信道。</p>
+<p><strong>特点：</strong>在不增加带宽和总发送功率的情况下，<strong>提高了信道容量</strong>，<strong>提高了频谱利用效率</strong>，提高了传输速率，减少误比特率，改善了无线信号的传送质量。代价是增加了发送端和接收端的处理复杂度。</p>
+<p><img src="https://venxineoss.oss-cn-shanghai.aliyuncs.com/blog/202112061028784.jpg" srcset="/img/loading.gif" lazyload alt="SISO，SIMO，MISO和MIMO，图片来源：Wikipedia。"></p>
+<p>对应的，根据收发两端的天线数量，更早期的技术是<strong>SISO</strong>（<strong>Single-Input Single-Output</strong>，<strong>单输入单输出</strong>），<strong>SIMO</strong>（<strong>Single-Input Multi-Output</strong>，<strong>单输入多输出</strong>），<strong>MISO</strong>（<strong>Multi-Input Single-Output</strong>，<strong>多输入单输出</strong>）。 </p>
+<p>MIMO技术同时从<strong>时间</strong>和<strong>空间</strong>两个方面处理信号。MIMO技术有两个核心思想：<strong>空间分集技术</strong>和<strong>空间复用技术</strong>。空间分集技术指利用多个天线发送同样的数据，对接收端而言，提高了传输的可靠性。空间复用技术指利用多个天线同时发送相互独立的数据，增加了系统的数据容量。<strong>空间分集技术解决了可靠性问题，空间复用技术解决了容量问题。</strong></p>
+<p>MIMO系统一般写作 <strong>A x B MIMO</strong>，A表示发射基站的天线数，B表示手机的天线数。</p>
+<hr>
+<h3 id="Beamforming"><a href="#Beamforming" class="headerlink" title="Beamforming"></a><strong>Beamforming</strong></h3><h4 id="波束成形。"><a href="#波束成形。" class="headerlink" title="波束成形。"></a><strong>波束成形。</strong></h4><p><strong>原理：</strong>根据终端设备的位置，向其发送无线信号。借由多根天线产生一个具有<strong>指向性</strong>的波束，将能量集中在欲传输的方向，增加信号质量，并减少了与其他用户间的干扰。</p>
+<hr>
+<h3 id="MU-MIMO"><a href="#MU-MIMO" class="headerlink" title="MU-MIMO"></a><strong>MU-MIMO</strong></h3><h4 id="Multi-User-Multi-Input-Multi-Output：多用户多输入多输出系统。"><a href="#Multi-User-Multi-Input-Multi-Output：多用户多输入多输出系统。" class="headerlink" title="Multi-User Multi-Input Multi-Output：多用户多输入多输出系统。"></a><strong>Multi-User Multi-Input Multi-Output：多用户多输入多输出系统。</strong></h4><p><strong>原理：</strong>采用显式波束成形（Explicit Beamforming）技术，实现信号的传播方向和接收控制，<strong>向多个终端同时发送数据</strong>，同时保证终端彼此不受干扰。</p>
+<p><strong>特点：</strong>对比SU-MIMO，SU-MIMO同时只能向一个终端发送数据，而MU-MIMO通过同时创建多个连接来同时向多个终端发送数据。</p>
+<p><strong>Wi-Fi 5</strong>（<strong>802.11ac</strong>）标准下，仅允许MU-MIMO<strong>最多支持4个终端</strong>，即AP或无线路由器最多同时发送数据到4个连接设备。而<strong>Wi-Fi 6</strong>（<strong>802.11ax</strong>）标准下，MU-MIMO<strong>最多可以支持8个终端</strong>。</p>
+<p><strong>Wi-Fi 5</strong>（<strong>802.11ac</strong>）标准下，MU-MIMO<strong>只支持下行数据</strong>。<strong>Wi-Fi 6</strong>（<strong>802.11ax</strong>）标准下，MU-MIMO<strong>同时支持上行、下行数据</strong>。</p>
+<p><strong>Wi-Fi 5最高支持8x8 MIMO</strong>；而<strong>Wi-Fi 6最高也支持8x8 MIMO</strong>。</p>
+<hr>
+<h3 id="OFDM"><a href="#OFDM" class="headerlink" title="OFDM"></a><strong>OFDM</strong></h3><h4 id="Orthogonal-Frequency-Division-Multiplexing：正交频分复用技术。"><a href="#Orthogonal-Frequency-Division-Multiplexing：正交频分复用技术。" class="headerlink" title="Orthogonal Frequency Division Multiplexing：正交频分复用技术。"></a><strong>Orthogonal Frequency Division Multiplexing：正交频分复用技术。</strong></h4><p><strong>调制</strong>是将传送资料对应于载波变化的动作，可以说载波的相位、频率、振幅或是其组合。</p>
+<p><strong>OFDM</strong>技术由MCM（Multi-Carrier Modulation，多载波调制）发展而来，是<strong>多载波调制</strong>的一种；是多载波传输方式的实现方式之一，是实现复杂度最低、应用最广的一种多载波传输方案。</p>
+<p>OFDM的基本原理是将一个高速资料流程，分割成数个低速资料流程，并将这数个低速资料流程同时调制在数个彼此相互正交载波上传送。也就是<strong>将信号分割为N个子信号，然后用N个子信号分别调制N个相互正交的子载波</strong>。由于子载波的频谱相互重叠，因而可以得到较高的频谱效率。正交信号可以通过在接收端采用相关技术来分开，这样可以减少了子信道之间的相互干扰。</p>
+<hr>
+<h3 id="OFDMA"><a href="#OFDMA" class="headerlink" title="OFDMA"></a><strong>OFDMA</strong></h3><h4 id="Orthogonal-Frequency-Division-Multiple-Access：正交频分多址技术。"><a href="#Orthogonal-Frequency-Division-Multiple-Access：正交频分多址技术。" class="headerlink" title="Orthogonal Frequency Division Multiple Access：正交频分多址技术。"></a><strong>Orthogonal Frequency Division Multiple Access：正交频分多址技术。</strong></h4><p><strong>OFDMA是OFDM技术的演进</strong>，用户可以选择信道条件较好的子通道（subchannel）进行数据传输，<strong>一组用户可以同时接入到某一信道</strong>。也就是说，<strong>网内多个终端可以并行传输</strong>，且无需排队等待、竞争，从根本上提升多用户的使用效率，并有效降低时延。</p>
+<p>OFDMA技术被认为非常适合宽带无线网络，优势包括可扩展性和MIMO的便利，并有能力利用通道的频率选择性。 </p>
+<p><img src="https://venxineoss.oss-cn-shanghai.aliyuncs.com/blog/202112061028238.png" srcset="/img/loading.gif" lazyload alt="图片来自：https://zhuanlan.zhihu.com/p/24416610"></p>
+<hr>
+<h3 id="QAM"><a href="#QAM" class="headerlink" title="QAM"></a><strong>QAM</strong></h3><h4 id="Quadrature-Amplitude-Modulation：正交振幅调制。"><a href="#Quadrature-Amplitude-Modulation：正交振幅调制。" class="headerlink" title="Quadrature Amplitude Modulation：正交振幅调制。"></a><strong>Quadrature Amplitude Modulation：正交振幅调制。</strong></h4><p>QAM是一种在两个正交载波上进行幅度调制的调制方式，这两个载波通常是相位差为π&#x2F;2的正弦波。</p>
+<p><img src="https://venxineoss.oss-cn-shanghai.aliyuncs.com/blog/202112061028195.jpg" srcset="/img/loading.gif" lazyload alt="64-QAM和256-QAM"></p>
+<p>QAM有多种不同的模式，最常用的是<strong>矩形QAM</strong>。矩形QAM优于非矩形QAM，因为前者更容易调制和解调。</p>
+<p>QAM发射信号集可以用<strong>星座图</strong>方便地表示，星座图上的每一个星座点对应发射信号集中的一个信号，星座点的个数一般是2的幂次方个，常见的QAM形式有二进制QAM（<strong>4-QAM</strong>）、四进制QAM（<strong>16-QAM</strong>）、八进制QAM（<strong>64-QAM</strong>）、十六进制QAM（<strong>256-QAM</strong>）、三十二进制QAM（<strong>1024-QAM</strong>）。</p>
+<p><strong>星座点数越多，每个符号能传输的信息量就越大。</strong>例如：256-QAM下单个符号可以传输256bit（2^8）数据，1024-QAM下单个符号可以传输1024bit（2^10）数据。</p>
+<hr>
+<h3 id="信道和频宽"><a href="#信道和频宽" class="headerlink" title="信道和频宽"></a><strong>信道和频宽</strong></h3><p><strong>信道</strong>（<strong>Channel</strong>）又称<strong>频段</strong>或<strong>频道</strong>，是<strong>信号在通信系统中传输的通道</strong>。</p>
+<p><strong>频宽</strong>（<strong>Channel</strong>）指<strong>路由器的发射频率宽度</strong>，也就是<strong>信道带宽</strong>。</p>
+<p><img src="https://venxineoss.oss-cn-shanghai.aliyuncs.com/blog/202112061030726.png" srcset="/img/loading.gif" lazyload alt="2.4Ghz WiFi频道和带宽示意图，图片来源：Wikipedia。"></p>
+<p>在2.4GHz频段，频率的范围为<strong>2.400GHz~2.4835GHz</strong>，共<strong>83.5MHz</strong>带宽。而又将83.5MHz带宽划分为了<strong>14个子信道</strong>。每个子信道的宽度为22MHz，其中，<strong>有效带宽为20MHz</strong>，另外的2MHz为强制隔离频带。每个子信道相隔5MHz，13信道和14信道相隔12MHz。</p>
+<p>14个信道里面，每个国家的标准不一样，使用的信道也不一样。<strong>中国采用欧洲&#x2F;ETSI标准，使用1-13信道。美国和加拿大采用美国标准，使用1-11信道。</strong>所以如果有时候发现设备连不上WiFi，有可能是路由器设置在了12或13信道。</p>
+<p>在WiFi 4（802.11n）标准下，WiFi支持<strong>信道捆绑</strong>，也就是把相邻的两个20MHz的信道捆绑在一起用，组成40MHz的信道带宽。</p>
+<hr>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a><strong>参考资料</strong></h3><p>① 维基百科词条：MIMO</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/MIMO">https://zh.wikipedia.org/wiki/MIMO</a> </p>
+<p>② 维基百科词条：WLAN信道列表</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/WLAN%E4%BF%A1%E9%81%93%E5%88%97%E8%A1%A8">https://zh.wikipedia.org/wiki/WLAN%E4%BF%A1%E9%81%93%E5%88%97%E8%A1%A8</a> </p>
+<p>③ 维基百科词条：正交频分复用</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-cn/%E6%AD%A3%E4%BA%A4%E9%A0%BB%E5%88%86%E5%A4%8D%E7%94%A8">https://zh.wikipedia.org/zh-cn/%E6%AD%A3%E4%BA%A4%E9%A0%BB%E5%88%86%E5%A4%8D%E7%94%A8</a> </p>
+<p>④ 维基百科词条：正交频分多址</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E4%BA%A4%E9%A0%BB%E5%88%86%E5%A4%9A%E5%9D%80">https://zh.wikipedia.org/wiki/%E6%AD%A3%E4%BA%A4%E9%A0%BB%E5%88%86%E5%A4%9A%E5%9D%80</a> </p>
+<p>⑤ 维基百科词条：正交幅度调制</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E4%BA%A4%E5%B9%85%E5%BA%A6%E8%B0%83%E5%88%B6">https://zh.wikipedia.org/wiki/%E6%AD%A3%E4%BA%A4%E5%B9%85%E5%BA%A6%E8%B0%83%E5%88%B6</a></p>
+<p>⑥ 《MIMO是什么？》 </p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/41520064">https://zhuanlan.zhihu.com/p/41520064</a> </p>
+<p>⑦ 《Wi-Fi 6（802.11ax）解析2：OFDMA资源块-RU》</p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24416610">https://zhuanlan.zhihu.com/p/24416610</a> </p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%AC%94%E8%AE%B0%EF%BD%9CTo-Learn/" class="category-chain-item">笔记｜To Learn</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%AC%94%E8%AE%B0%EF%BD%9CTo-Learn/%E8%B7%AF%E7%94%B1%E5%99%A8%EF%BD%9CRouter/" class="category-chain-item">路由器｜Router</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%BD%91%E7%BB%9C/" class="print-no-link">#网络</a>
+      
+        <a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" class="print-no-link">#路由器</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Notes｜网络设备相关术语的学习</div>
+      <div>http://example.com/2020/07/16/20200716 - Notes｜网络设备相关术语的学习/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Venxine</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2020年7月16日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/07/28/20200728%20-%20Notes%EF%BD%9C802.11ac%20Wave1%E4%B8%8EWave2/" title="Notes｜802.11ac Wave1与Wave2">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Notes｜802.11ac Wave1与Wave2</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/02/25/20190225%20-%20Vortioxetine%EF%BD%9C%E6%B2%83%E6%9B%BF%E8%A5%BF%E6%B1%80%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" title="Vortioxetine｜沃替西汀的前世今生">
+                        <span class="hidden-mobile">Vortioxetine｜沃替西汀的前世今生</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
